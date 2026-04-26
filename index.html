@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consistify</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- Header Section -->
+            <div class="card-header">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Consistify</span>
+                </div>
+                <h1>Welcome to Consistify</h1>
+                <p class="subtitle">“Track habits. Build consistency.”</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="tabs">
+                <button class="tab-btn active" id="login-tab">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                </button>
+                <button class="tab-btn" id="signup-tab">
+                    <i class="fas fa-user-plus"></i>
+                    Sign Up
+                </button>
+                <div class="tab-indicator"></div>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="form active">
+                <!-- Username removed for simpler login -->
+
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i>
+                        Email Address
+                    </label>
+                    <input type="email" id="email" placeholder="Enter your work email" required>
+                    <div class="input-hint">We'll never share your email with anyone else.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                        Password
+                    </label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <button type="button" class="password-toggle">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+
+                <div class="form-options">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Keep me signed in</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="submit-btn primary-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Login
+                </button>
+
+                <div class="divider">
+                    <span>Or continue with</span>
+                </div>
+
+                <div class="social-auth">
+                    <button type="button" class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                </div>
+
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" class="switch-form">Sign up now</a></p>
+                </div>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" class="form">
+                <div class="form-group">
+                    <label for="full-name">
+                        <i class="fas fa-user"></i>
+                        Full Name
+                    </label>
+                    <input type="text" id="full-name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i>
+                        Username
+                    </label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-email">
+                        <i class="fas fa-envelope"></i>
+                        Email Address
+                    </label>
+                    <input type="email" id="signup-email" placeholder="company@example.com" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signup-password">
+                            <i class="fas fa-lock"></i>
+                            Password
+                        </label>
+                        <input type="password" id="signup-password" placeholder="Create a password" required>
+                        <button type="button" class="password-toggle">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">
+                            <i class="fas fa-lock"></i>
+                            Confirm Password
+                        </label>
+                        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                    </div>
+                </div>
+
+                <div class="password-strength">
+                    <div class="strength-bar">
+                        <div class="strength-level"></div>
+                    </div>
+                    <span class="strength-text">Password strength: Weak</span>
+                </div>
+
+                <div class="checkbox-group terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <div class="checkbox-group newsletter">
+                    <input type="checkbox" id="newsletter" checked>
+                    <label for="newsletter">Send me product updates and tips</label>
+                </div>
+
+                <button type="submit" class="submit-btn primary-btn">
+                    <i class="fas fa-rocket"></i>
+                    Create Account
+                </button>
+
+                <div class="divider">
+                    <span>Or continue with</span>
+                </div>
+
+                <div class="social-auth">
+                    <button type="button" class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                </div>
+
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" class="switch-form">Sign in</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabaseClient.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

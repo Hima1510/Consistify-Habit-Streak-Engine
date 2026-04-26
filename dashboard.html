@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- User Profile Bar -->
+            <div class="user-profile-bar">
+                <div class="user-profile-content">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <p class="user-greeting">Welcome back,</p>
+                        <h2 id="profile-username">User</h2>
+                    </div>
+                </div>
+                <div class="user-profile-actions">
+                    <a href="#" class="profile-link logout-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </a>
+                </div>
+            </div>
+
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1>Dashboard</h1>
+                    <p>“Track habits. Build consistency.”</p>
+                </div>
+                <div class="header-right">
+                    <div class="date-display">
+                        <i class="fas fa-calendar-day"></i>
+                        <span id="current-date">Loading...</span>
+                    </div>
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Current Streak</h3>
+                        <p class="stat-value">0 days</p>
+                        <p class="stat-change" style="color:transparent;">--</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Overall Consistency</h3>
+                        <p class="stat-value">0%</p>
+                        <p class="stat-change" style="color:transparent;">--</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Active Habits</h3>
+                        <p class="stat-value">0</p>
+                        <p class="stat-change" style="color:transparent;">--</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Time</h3>
+                        <p class="stat-value">0h 0m</p>
+                        <p class="stat-change">No data tracked</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Habit Management Section -->
+            <div class="habit-section">
+                <div class="section-header">
+                    <h2>Habit List</h2>
+                    <div class="section-actions">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search habits...">
+                        </div>
+                        <button class="add-habit-btn" id="add-habit-btn">
+                            <i class="fas fa-plus"></i>
+                            Add Habit
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Habit Table -->
+                <div class="table-container">
+                    <table class="habit-table">
+                        <thead>
+                            <tr>
+                                <th>Habit Name</th>
+                                <th>Description</th>
+                                <th>Current Streak</th>
+                                <th>Longest Streak</th>
+                                <th>Consistency %</th>
+                                <th>Last Updated</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Row 1 -->
+                            <tr>
+                                <td>
+                                    <div class="habit-name">
+                                        <div class="habit-icon" style="background-color: #3498db;">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Morning Workout</strong>
+                                            <p class="habit-frequency">Daily at 7:00 AM</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge health">Health</span>
+                                </td>
+                                <td>
+                                    <div class="streak-display">
+                                        <i class="fas fa-fire" style="color: #e74c3c;"></i>
+                                        <span>25 days</span>
+                                    </div>
+                                </td>
+                                <td>30 days</td>
+                                <td>
+                                    <div class="consistency-cell">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 92%; background-color: #2ecc71;">
+                                            </div>
+                                        </div>
+                                        <span>92%</span>
+                                    </div>
+                                </td>
+                                <td>Today, 7:15 AM</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn mark-complete" title="Mark as complete">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn" title="Edit habit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-btn delete-btn" title="Delete habit">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 2 -->
+                            <tr>
+                                <td>
+                                    <div class="habit-name">
+                                        <div class="habit-icon" style="background-color: #9b59b6;">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Read 30 Minutes</strong>
+                                            <p class="habit-frequency">Daily at 9:00 PM</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge learning">Learning</span>
+                                </td>
+                                <td>
+                                    <div class="streak-display">
+                                        <i class="fas fa-fire" style="color: #e74c3c;"></i>
+                                        <span>18 days</span>
+                                    </div>
+                                </td>
+                                <td>45 days</td>
+                                <td>
+                                    <div class="consistency-cell">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 87%; background-color: #2ecc71;">
+                                            </div>
+                                        </div>
+                                        <span>87%</span>
+                                    </div>
+                                </td>
+                                <td>Yesterday, 9:30 PM</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn mark-complete" title="Mark as complete">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn" title="Edit habit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-btn delete-btn" title="Delete habit">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 3 -->
+                            <tr>
+                                <td>
+                                    <div class="habit-name">
+                                        <div class="habit-icon" style="background-color: #e67e22;">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Code Practice</strong>
+                                            <p class="habit-frequency">Weekdays at 6:00 PM</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge work">Work</span>
+                                </td>
+                                <td>
+                                    <div class="streak-display">
+                                        <i class="fas fa-fire" style="color: #e74c3c;"></i>
+                                        <span>12 days</span>
+                                    </div>
+                                </td>
+                                <td>60 days</td>
+                                <td>
+                                    <div class="consistency-cell">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 78%; background-color: #f39c12;">
+                                            </div>
+                                        </div>
+                                        <span>78%</span>
+                                    </div>
+                                </td>
+                                <td>2 days ago</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn mark-complete" title="Mark as complete">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn" title="Edit habit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-btn delete-btn" title="Delete habit">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 4 -->
+                            <tr>
+                                <td>
+                                    <div class="habit-name">
+                                        <div class="habit-icon" style="background-color: #2ecc71;">
+                                            <i class="fas fa-bed"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Sleep by 11 PM</strong>
+                                            <p class="habit-frequency">Daily</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge health">Health</span>
+                                </td>
+                                <td>
+                                    <div class="streak-display">
+                                        <i class="fas fa-fire" style="color: #e74c3c;"></i>
+                                        <span>5 days</span>
+                                    </div>
+                                </td>
+                                <td>21 days</td>
+                                <td>
+                                    <div class="consistency-cell">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 65%; background-color: #f1c40f;">
+                                            </div>
+                                        </div>
+                                        <span>65%</span>
+                                    </div>
+                                </td>
+                                <td>Today, 11:05 PM</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn mark-complete" title="Mark as complete">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn" title="Edit habit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-btn delete-btn" title="Delete habit">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 5 -->
+                            <tr>
+                                <td>
+                                    <div class="habit-name">
+                                        <div class="habit-icon" style="background-color: #e74c3c;">
+                                            <i class="fas fa-apple-alt"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Drink 2L Water</strong>
+                                            <p class="habit-frequency">Daily</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge health">Health</span>
+                                </td>
+                                <td>
+                                    <div class="streak-display">
+                                        <i class="fas fa-fire" style="color: #e74c3c;"></i>
+                                        <span>42 days</span>
+                                    </div>
+                                </td>
+                                <td>42 days</td>
+                                <td>
+                                    <div class="consistency-cell">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 95%; background-color: #2ecc71;">
+                                            </div>
+                                        </div>
+                                        <span>95%</span>
+                                    </div>
+                                </td>
+                                <td>Today, 8:00 PM</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn mark-complete" title="Mark as complete">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="action-btn edit-btn" title="Edit habit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-btn delete-btn" title="Delete habit">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="activity-section">
+                <h2>Recent Activity</h2>
+                <div class="activity-list" id="activity-list">
+                    <p class="empty-state" style="color:#64748b; font-style:italic;">No recent activity yet. Start
+                        completing habits!</p>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <div class="section-header">
+                    <h2>Your Achievements</h2>
+                    <p class="section-subtitle">Keep going! Unlock more badges</p>
+                </div>
+                <div class="achievements-grid" id="achievements-grid">
+                    <p class="empty-state" style="color:#64748b; font-style:italic; grid-column: 1/-1;">Badges will
+                        appear here as you hit streak milestones.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notifications Modal -->
+    <div class="modal-overlay" id="notifications-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Notifications</h3>
+                <button class="modal-close" id="notifications-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body notifications-body" id="notifications-body">
+                <p style="text-align:center; color:#64748b; font-style:italic; margin-top:20px;">You are all caught up!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar Modal -->
+    <div class="modal-overlay" id="calendar-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Calendar</h3>
+                <button class="modal-close" id="calendar-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body calendar-body">
+                <div class="calendar-header">
+                    <button id="prev-month" class="calendar-nav-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <h4 id="calendar-month-year">January 2026</h4>
+                    <button id="next-month" class="calendar-nav-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div class="weekday">Sun</div>
+                    <div class="weekday">Mon</div>
+                    <div class="weekday">Tue</div>
+                    <div class="weekday">Wed</div>
+                    <div class="weekday">Thu</div>
+                    <div class="weekday">Fri</div>
+                    <div class="weekday">Sat</div>
+                </div>
+                <div class="calendar-days" id="calendar-days">
+                    <!-- Days will be populated by JavaScript -->
+                </div>
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <span class="legend-box completed"></span>
+                        <p>Completed</p>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-box missed"></span>
+                        <p>Missed</p>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-box pending"></span>
+                        <p>Pending</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Habit Modal -->
+    <div class="modal-overlay" id="add-habit-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Add New Habit</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="new-habit-form">
+                    <div class="form-group">
+                        <label for="habit-name">
+                            <i class="fas fa-tag"></i>
+                            Habit Name
+                        </label>
+                        <input type="text" id="habit-name" placeholder="e.g., Morning Meditation" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habit-category">
+                            <i class="fas fa-align-left"></i>
+                            Description
+                        </label>
+                        <input type="text" id="habit-category" placeholder="e.g., Read 10 pages" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habit-frequency">
+                            <i class="fas fa-calendar-alt"></i>
+                            Frequency
+                        </label>
+                        <select id="habit-frequency" required>
+                            <option value="">How often?</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="weekend">Weekend</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habit-time">
+                            <i class="fas fa-clock"></i>
+                            Preferred Time (Optional)
+                        </label>
+                        <input type="time" id="habit-time">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habit-reminder">
+                            <i class="fas fa-bell"></i>
+                            Reminder
+                        </label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="habit-reminder">
+                            <label for="habit-reminder">Send me reminder notifications</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-btn">Cancel</button>
+                <button type="submit" form="new-habit-form" class="btn btn-primary">Add Habit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Habit Modal -->
+    <div class="modal-overlay" id="edit-habit-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Edit Habit</h3>
+                <button class="modal-close" id="edit-modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-habit-form">
+                    <div class="form-group">
+                        <label for="edit-habit-name">
+                            <i class="fas fa-tag"></i>
+                            Habit Name
+                        </label>
+                        <input type="text" id="edit-habit-name" placeholder="e.g., Morning Meditation" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-habit-category">
+                            <i class="fas fa-align-left"></i>
+                            Description
+                        </label>
+                        <input type="text" id="edit-habit-category" placeholder="e.g., Read 10 pages" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-habit-frequency">
+                            <i class="fas fa-calendar-alt"></i>
+                            Frequency
+                        </label>
+                        <select id="edit-habit-frequency" required>
+                            <option value="">How often?</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="weekend">Weekend</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-habit-time">
+                            <i class="fas fa-clock"></i>
+                            Preferred Time (Optional)
+                        </label>
+                        <input type="time" id="edit-habit-time">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-habit-reminder">
+                            <i class="fas fa-bell"></i>
+                            Reminder
+                        </label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="edit-habit-reminder">
+                            <label for="edit-habit-reminder">Send me reminder notifications</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="edit-cancel-btn">Cancel</button>
+                <button type="submit" form="edit-habit-form" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabaseClient.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
