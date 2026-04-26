@@ -1,4 +1,4 @@
-# 🧠 Habit Streak Engine
+# Habit Streak Engine
 
 A scalable, backend-first habit tracking system designed to help users build consistency through structured habit management, intelligent logging, and streak-oriented data modeling.
 
@@ -50,7 +50,7 @@ The system is designed to support reminder scheduling, helping users stay consis
 
 ---
 
-## 🚀 Use Cases
+## Use Cases
 
 This backend can power a variety of applications, including:
 
@@ -65,10 +65,3 @@ This backend can power a variety of applications, including:
 
 - Supabase (PostgreSQL + Authentication)
 - HTML, CSS, Js
-
----
-
-## 📬 Contact
-
-For questions, ideas, or collaboration, feel free to open an issue in the repository.
-
