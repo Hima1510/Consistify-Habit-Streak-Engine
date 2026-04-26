@@ -64,19 +64,7 @@ This backend can power a variety of applications, including:
 ## 🛠️ Tech Stack
 
 - Supabase (PostgreSQL + Authentication)
-- SQL
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome. Feel free to open issues or submit pull requests to improve the project.
-
----
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
+- HTML, CSS, Js
 
 ---
 
